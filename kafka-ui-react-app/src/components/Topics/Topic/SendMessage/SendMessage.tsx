@@ -118,8 +118,8 @@ const SendMessage: React.FC<{ closeSidebar: () => void }> = ({
         valueSerde,
       });
       if (!keepContents) {
-        setValue('key', '');
-        setValue('content', '');
+        setValue('key', defaultValues.key || '');
+        setValue('content', defaultValues.content || '');
         closeSidebar();
       }
     } catch (e) {
@@ -210,6 +210,7 @@ const SendMessage: React.FC<{ closeSidebar: () => void }> = ({
                   name={name}
                   onChange={onChange}
                   value={value}
+                  height="40px"
                 />
               )}
             />
@@ -225,6 +226,7 @@ const SendMessage: React.FC<{ closeSidebar: () => void }> = ({
                   name={name}
                   onChange={onChange}
                   value={value}
+                  height="280px"
                 />
               )}
             />
@@ -242,7 +244,7 @@ const SendMessage: React.FC<{ closeSidebar: () => void }> = ({
                   defaultValue="{}"
                   name={name}
                   onChange={onChange}
-                  height="200px"
+                  height="40px"
                 />
               )}
             />
